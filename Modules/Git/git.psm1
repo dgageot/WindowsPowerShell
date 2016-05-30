@@ -1,4 +1,3 @@
-# if (!(Get-InstalledModule -Name posh-git -ErrorAction SilentlyContinue)) {
-#     Install-PackageProvider -Name NuGet -Force
-#     Install-Module posh-git -Force
-# }
+. (Resolve-Path "$env:LOCALAPPDATA\GitHub\shell.ps1")
+
+Start-SshAgent -Quiet
