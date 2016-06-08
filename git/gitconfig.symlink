@@ -1,0 +1,53 @@
+[user]
+	email = david@gageot.net
+	name = David Gageot
+
+[github]
+	user = dgageot
+
+[core]
+	excludesfile = ~/.gitignore
+
+[hub]
+	protocol = https
+
+[color]
+	ui = auto
+
+[svn]
+	rmdir = true
+
+[diff]
+	renamelimit = 0
+
+[alias]
+	cp = cherry-pick
+	st = status -sb
+	br = branch
+	ci = commit
+	undo = reset --hard "HEAD~1"
+	uncommit = reset "HEAD~1"
+	lg = log --graph --branches --oneline --graph --decorate
+	co = checkout
+	lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+	amend = !"git add -A && git commit --amend"
+	heads = !"git log --oneline origin/master.."
+	wip = !"git add -A; git commit -asm 'wip'"
+
+[push]
+	default = simple
+
+[help]
+	autocorrect = 10
+
+[merge]
+	conflictstyle = merge
+
+[rerere]
+	enabled = 1
+
+[credential]
+	helper = osxkeychain
+
+[status]
+	showUntrackedFiles = all
